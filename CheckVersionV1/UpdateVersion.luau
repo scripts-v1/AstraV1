@@ -1,5 +1,5 @@
-local rVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/CheckVersionV1/Version.lua"))()
-local introUrl = "https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/ConfirmLoadOnceGUIV1.txt"
+local rVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts-v1/AstraV1/refs/heads/main/CheckVersionV1/Version.lua"))()
+local introUrl = "https://raw.githubusercontent.com/scripts-v1/AstraV1/refs/heads/main/GUI/ConfirmLoadOnceGUIV1.txt"
 local statusCodes = {
         "Everything is up to date!",
         "Updating script...",
