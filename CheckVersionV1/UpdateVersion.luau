@@ -1,4 +1,4 @@
-local rVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/Version.lua"))()
+local rVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/CheckVersionV1/Version.lua"))()
 local introUrl = "https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/ConfirmLoadOnceGUIV1.txt"
 local statusCodes = {
         "Everything is up to date!",
@@ -26,28 +26,21 @@ local function checkFiles()
         return statusCodes[4]
 end
 
-local result = checkFiles("https://raw.githubusercontent.com/scripts-v1/AstroV1/refs/heads/main/Version.lua")
+local result = checkFiles()
 
-local function createFiles()
 
-        if result == statusCodes[1] then return end
+if result == statusCodes[3] or statusCodes[4] then
+        makefolder("AstraV1")
+        makefolder("AstraV1/GUI")
 
-        if result == statusCodes[3] or statusCodes[4] then
-                makefolder("AstraV1")
-                makefolder("AstraV1/GUI")
+        writefile("AstraV1/version.txt", tostring(rVersion))
 
-                writefile("AstraV1/version.txt", tostring(rVersion))
+        local b64ena = game:HttpGet(introUrl)
 
-                local b64ena = game:HttpGet(introUrl)
-
-                if b64ena and #tostring(b64ena) > 500 then
-                        writefile("AstraV1/GUI/IntroV1.rbxm", base64decode(b64ena))
-                end
-
+        if b64ena and #tostring(b64ena) > 500 then
+                writefile("AstraV1/GUI/IntroV1.rbxm", base64decode(b64ena))
         end
-
 end
 
 
-createFiles()
 return result
