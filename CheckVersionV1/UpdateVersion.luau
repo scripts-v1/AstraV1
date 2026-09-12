@@ -43,4 +43,4 @@ if result == statusCodes[3] or statusCodes[4] then
 end
 
 
-return result
+return result, statusCodes
