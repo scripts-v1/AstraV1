@@ -4,7 +4,7 @@ local function loadGUIScripts(GUI)
         local main = blur:FindFirstChild("Main")
         local button = main:FindFirstChild("TextButton")
 
-        button.Activaed:Connect(function()
+        button.Activated:Connect(function()
             GUI:Destroy()
             return "Sucess"
         end)
