@@ -3,9 +3,9 @@
 
 if getgenv().NotifyToast then return end
 
-local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
-local HttpService = game:GetService("HttpService")
+local TweenService = cloneref(game:GetService("TweenService"))
+local CoreGui = cloneref(game:GetService("CoreGui"))
+local HttpService = cloneref(game:GetService("HttpService"))
 
 local Config = {
     ["Slide In Time"] = 0.4,
